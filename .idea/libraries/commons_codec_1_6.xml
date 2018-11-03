@@ -11,6 +11,7 @@
       <root url="jar://$PROJECT_DIR$/java-json.jar!/" />
       <root url="jar://$PROJECT_DIR$/json-20140107.jar!/" />
       <root url="jar://$PROJECT_DIR$/unirest-java-1.4.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mysql-connector-java-5.1.47-bin.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

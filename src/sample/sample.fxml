@@ -4,6 +4,7 @@
 <?import javafx.collections.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
 <GridPane id="grid" alignment="CENTER" hgap="10.0" prefHeight="650.0" prefWidth="800.0" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
@@ -12,9 +13,30 @@
       <children>
         <TabPane layoutX="0.0" layoutY="0.0" prefHeight="652.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
           <tabs>
-            <Tab text="Sklad">
+            <Tab onSelectionChanged="#sklad" text="Sklad">
               <content>
-                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <TableView fx:id="table" layoutX="40.0" layoutY="38.0" onMouseClicked="#getDataFromRow" prefHeight="298.0" prefWidth="721.0" />
+                  <Button fx:id="delete" layoutX="712.0" layoutY="347.0" mnemonicParsing="false" onAction="#deleteRowFromTable" text="Delete" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dfdfdf" height="132.0" layoutX="40.0" layoutY="387.0" stroke="BLACK" strokeType="INSIDE" width="721.0000999999975" />
+                  <Label layoutX="70.0" layoutY="404.0" text="Meno:" />
+                  <TextField fx:id="zadajMeno" layoutX="70.0" layoutY="426.0" prefWidth="200.0" promptText="Zadaj meno" />
+                  <Label layoutX="301.0" layoutY="404.0" text="Zmen pocet kusov:" />
+                  <TextField fx:id="zadajPocetKusov" layoutX="301.0" layoutY="426.0" prefWidth="200.0" promptText="Zmen pocet kusov" />
+                  <Label layoutX="529.0" layoutY="404.0" text="Krajina:" />
+                  <Button id="update" layoutX="706.0" layoutY="531.0" mnemonicParsing="false" onAction="#updateData" text="Update" />
+                  <ChoiceBox id="krajinaPovodu" fx:id="zadajKrajinu" layoutX="529.0" layoutY="426.0" prefWidth="200.0">
+                    <items>
+                      <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="SK" />
+                        <String fx:value="CZ" />
+                        <String fx:value="GB" />
+                        <String fx:value="USA" />
+                        <String fx:value="Other" />
+                      </FXCollections>
+                    </items>
+                  </ChoiceBox>
+                </AnchorPane>
               </content>
             </Tab>
             <Tab text="Vklad">
